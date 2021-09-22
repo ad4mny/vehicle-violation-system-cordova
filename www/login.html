@@ -12,12 +12,31 @@
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/app/app.js"></script>
 </head>
 
-<body>
-    <p>
-        Login
-    </p>
-</body>
+<body class="bg-light">
+    <!-- Content -->
+    <div class="container">
+        <div id="alert" class="w-75 position-absolute start-50 translate-middle mt-5" style="z-index: 1; top: 10%;">
+        </div>
+        <div class="row d-flex vh-100 align-items-center justify-content-center">
+            <div class="col mx-5">
+                <div class="form-group pb-2 text-center">
+                    <h3 class="fw-bold">Saman-On-The-GO</h3>
+                </div>
+                <div class="form-group pb-2">
+                    <input type="text" class="form-control" id="usr" placeholder="Matric/Staff ID" required>
+                </div>
+                <div class="form-group pb-2">
+                    <input type="password" class="form-control" id="pwd" placeholder="Password" required>
+                </div>
+                <div class="form-group pb-2 text-center">
+                    <button type="submit" class="form-control btn btn-primary" name="submit"
+                        onclick="login()">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </html>
