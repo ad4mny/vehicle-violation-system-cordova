@@ -3,34 +3,27 @@ var sotg_user_token = JSON.parse(localStorage.getItem('sotg_users'));
 
 $(document).on('click', '#scanSticker', function () {
 
-    var id = this.value.split("/");
-
     cordova.plugins.barcodeScanner.scan(function (result) {
 
         var scanned_id = result["text"];
 
-        if (id[0] === scanned_id) {
-            $.ajax({
-                type: "POST",
-                url: web_links + "api/set_pay",
-                data: {
-                    order_id: id[1],
-                },
-                dataType: 'JSON',
-                success: function (data) {
-
-                    if (data != false) {
-                        alert('Payment made!');
-                        location.replace('checkout.html');
-                    } else {
-                        alert('Scanning error! Scan the barcode again.');
-                        location.replace('checkout.html');
-                    }
+        $.ajax({
+            type: "POST",
+            url: web_links + "api/get_vehicle",
+            data: {
+                vehicle_id: scanned_id
+            },
+            dataType: 'JSON',
+            success: function (data) {
+                if (data != false) {
+                    location.replace('summon_form.html');
+                } else {
+                    alert('Scanning error! Scan the barcode again.');
+                    location.replace('scan.html');
                 }
-            });
-        } else {
-            alert('Wrong menu id!');
-        }
+            }
+        });
+
     }, function (error) {
         alert('Error!');
     }, {

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SamanOnTheGo</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/app/app.js"></script>
+
+</head>
+
+<body class="bg-light">
+
+    <div class="bg-white d-block d-lg-none d-inline-flex w-100 border-top shadow-sm ">
+        <div class="p-2 flex-fill">
+            <a href="scan.html" class="mb-0 py-1 text-primary fs-5 text-decoration-none"><i class="fas fa-chevron-left"></i> Back</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row my-3">
+            <div class="col">
+                <h1 class="fw-bold display-4 mb-0">Summon Form</h1>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col">
+                <div class="form-group py-2 border-bottom">
+                    <small>REGISTRATION NO.</small>
+                    <p id="regno" class="text-uppercase fw-bold mb-0">CBX 9009</p>
+                </div>
+                <div class=" form-group py-2 border-bottom">
+                    <small>VEHICLE TYPE</small>
+                    <p id="vehicle" class="text-uppercase fw-bold mb-0">PERODUA MYVI</p>
+                </div>
+                <div class=" form-group py-2 border-bottom">
+                    <small>DRIVER NAME</small>
+                    <p id="name" class="text-uppercase fw-bold mb-0">ADAM AIMAN BIN ZULKORNAIN</p>
+                </div>
+                <div class="form-group py-2 border-bottom">
+                    <small>VIOLATIONS</small>
+                    <select class="form-select" name="reason" id="reason">
+                        <option value="accident">Cause accident</option>
+                        <option value="parking"> Parking violation</option>
+                        <option value="sticker"> No sticker displayed</option>
+                        <option value="seatbelt"> Not wearing seatbelt/helmet</option>
+                    </select>
+                </div>
+                <div class="form-group py-2 text-center">
+                    <button class="btn btn-primary" onclick="makeSummon()">Summon</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
