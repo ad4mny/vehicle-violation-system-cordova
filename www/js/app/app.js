@@ -1,4 +1,4 @@
-var web_links = "http://localhost/vehicle-violation-system/";
+var web_links = "https://umpsamanonthego.000webhostapp.com/";
 var sotg_user_token = JSON.parse(localStorage.getItem('sotg_users'));
 
 var login = function () {
@@ -18,6 +18,9 @@ var login = function () {
             url: web_links + "api/get_login",
             data: input,
             dataType: 'JSON',
+            beforeSend: function () {
+                $('#loadGif').show();
+            },
             success: function (data) {
                 if (data != false) {
                     localStorage.setItem('sotg_users', JSON.stringify(data));
@@ -25,6 +28,12 @@ var login = function () {
                 } else {
                     alert('Incorrect username or password.');
                 }
+            },
+            error: function () {
+                $('#display').append('<div class="row"><div class="col"><p class="my-3 text-muted">Internal server error, please reload.</p></div></div>');
+            },
+            complete: function () {
+                $('#loadGif').hide();
             }
 
         });

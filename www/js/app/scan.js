@@ -11,6 +11,9 @@ var scan = function () {
                 sticker_id: scanned_id
             },
             dataType: "JSON",
+            beforeSend: function () {
+                $('#loadGif').show();
+            },
             success: function (data) {
 
                 if (data != false) {
@@ -27,8 +30,14 @@ var scan = function () {
                     location.replace('scan.html');
                 }
 
+            },
+            error: function () {
+                $('#display').append('<div class="row"><div class="col"><p class="my-3 text-muted">Internal server error, please reload.</p></div></div>');
+            },
+            complete: function () {
+                $('#loadGif').hide();
             }
-            
+
         });
 
     }, function (error) {
