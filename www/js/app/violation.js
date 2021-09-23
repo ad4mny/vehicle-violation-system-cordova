@@ -2,7 +2,7 @@ window.addEventListener('load', (event) => {
 
     $.ajax({
         type: "POST",
-        url: web_links + "api/get_vehicle_list",
+        url: web_links + "api/get_violation_list",
         dataType: "JSON",
         beforeSend: function () {
             $('#loadGif').show();
@@ -14,12 +14,11 @@ window.addEventListener('load', (event) => {
                     $('#display').append(
                         '   <div class="row mx-1 mb-1 p-2 bg-white shadow-sm rounded-3">' +
                         '            <div class="col text-uppercase">' +
-                        data[i].vehicleBrand +
-                        '<br>' +
-                        data[i].vehicleRegistrationNo +
+                        data[i].type +'<br>' +
                         '            </div>' +
-                        '            <div class="col-5  text-uppercase">' +
-                        data[i].date +
+                        '            <div class="col  text-uppercase">' +
+                        '<small class="text-muted">' + data[i].date + '</small><br>' +
+                        '<small class="text-muted">' + data[i].vehicleRegistrationNo + '</small>' +
                         '             </div>' +
                         '        </div>'
                     )

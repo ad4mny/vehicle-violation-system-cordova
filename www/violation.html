@@ -13,6 +13,7 @@
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/app/app.js"></script>
+    <script type="text/javascript" src="js/app/violation.js"></script>
 
 </head>
 
@@ -32,7 +33,7 @@
         </div>
         <div class="p-2 flex-fill">
             <a href="#" class="btn text-primary">
-                <i class="fas fa-users fa-fw fa-lg"></i>
+                <i class="fas fa-clipboard-list fa-fw fa-lg"></i>
             </a>
         </div>
         <div class="p-2 flex-fill">
@@ -52,12 +53,10 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <p class="display-4 m-5 text-center"> User
-                </p>
-            </div>
+    <div class="container mt-2 pb-5 mb-5" id="display">
+        <div class="col text-center" id="loadGif" style="display: none;">
+            <img src="img/load.gif" height="70" width="70">
+            <p class="text-muted">Loading...</p>
         </div>
     </div>
 </body>
