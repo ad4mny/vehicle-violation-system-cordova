@@ -13,6 +13,7 @@
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/app/app.js"></script>
+    <script type="text/javascript" src="js/app/summon_form.js"></script>
 
 </head>
 
@@ -20,7 +21,8 @@
 
     <div class="bg-white d-block d-lg-none d-inline-flex w-100 border-top shadow-sm ">
         <div class="p-2 flex-fill">
-            <a href="scan.html" class="mb-0 py-1 text-primary fs-5 text-decoration-none"><i class="fas fa-chevron-left"></i> Back</a>
+            <a href="scan.html" class="mb-0 py-1 text-primary fs-5 text-decoration-none"><i
+                    class="fas fa-chevron-left"></i> Back</a>
         </div>
     </div>
 
@@ -34,24 +36,32 @@
             <div class="col">
                 <div class="form-group py-2 border-bottom">
                     <small>REGISTRATION NO.</small>
-                    <p id="regno" class="text-uppercase fw-bold mb-0">CBX 9009</p>
+                    <p id="registration_no" class="text-uppercase fw-bold mb-0"></p>
                 </div>
                 <div class=" form-group py-2 border-bottom">
                     <small>VEHICLE TYPE</small>
-                    <p id="vehicle" class="text-uppercase fw-bold mb-0">PERODUA MYVI</p>
+                    <p id="vehicle_type" class="text-uppercase fw-bold mb-0"></p>
                 </div>
                 <div class=" form-group py-2 border-bottom">
-                    <small>DRIVER NAME</small>
-                    <p id="name" class="text-uppercase fw-bold mb-0">ADAM AIMAN BIN ZULKORNAIN</p>
+                    <small>DRIVER'S NAME</small>
+                    <p id="driver_name" class="text-uppercase fw-bold mb-0"></p>
+                </div>
+                <div class=" form-group py-2 border-bottom">
+                    <small>CARD ID</small>
+                    <p id="card_id" class="text-uppercase fw-bold mb-0"></p>
                 </div>
                 <div class="form-group py-2 border-bottom">
                     <small>VIOLATIONS</small>
-                    <select class="form-select" name="reason" id="reason">
-                        <option value="accident">Cause accident</option>
-                        <option value="parking"> Parking violation</option>
-                        <option value="sticker"> No sticker displayed</option>
-                        <option value="seatbelt"> Not wearing seatbelt/helmet</option>
+                    <select class="form-select" id="violation" required>
+                        <option value="Cause accident">Cause accident</option>
+                        <option value="Parking violation"> Parking violation</option>
+                        <option value="No sticker displayed"> No sticker displayed</option>
+                        <option value="Not wearing seatbelt/helmet"> Not wearing seatbelt/helmet</option>
                     </select>
+                </div>
+                <div class="form-group py-2 border-bottom">
+                    <small>LOCATION</small>
+                    <input type="text" class="form-control" id="location" placeholder="Enter summon location" required>
                 </div>
                 <div class="form-group py-2 text-center">
                     <button class="btn btn-primary" onclick="makeSummon()">Summon</button>
