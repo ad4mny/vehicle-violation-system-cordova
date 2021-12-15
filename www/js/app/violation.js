@@ -14,11 +14,11 @@ window.addEventListener('load', (event) => {
                     $('#display').append(
                         '   <div class="row mx-1 mb-1 p-2 bg-white shadow-sm rounded-3">' +
                         '            <div class="col text-uppercase">' +
-                        data[i].type +'<br>' +
+                        data[i].type + '<br>' +
                         '            </div>' +
                         '            <div class="col  text-uppercase">' +
                         '<small class="text-muted">' + data[i].date + '</small><br>' +
-                        '<small class="text-muted">' + data[i].vehicleRegistrationNo + '</small>' +
+                        '<small class="text-muted">' + data[i].vehicleRegistrationNo + ' | ' + data[i].cardID + '</small>' +
                         '             </div>' +
                         '        </div>'
                     )
