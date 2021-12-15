@@ -18,6 +18,9 @@ window.addEventListener('load', (event) => {
                         '<br>' +
                         data[i].vehicleRegistrationNo +
                         '            </div>' +
+                        '            <div class="col text-uppercase">' +
+                        data[i].cardID +
+                        '            </div>' +
                         '            <div class="col-5  text-uppercase">' +
                         data[i].date +
                         '             </div>' +
