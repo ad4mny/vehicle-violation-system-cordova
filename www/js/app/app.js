@@ -22,9 +22,15 @@ var login = function () {
                 $('#loadGif').show();
             },
             success: function (data) {
+
                 if (data != false) {
-                    localStorage.setItem('sotg_users', JSON.stringify(data));
-                    location.replace('index.html');
+                    if (data['role'] == 'Admin') {
+                        localStorage.setItem('sotg_users', JSON.stringify(data));
+                        location.replace('index.html');
+                    } else {
+                        alert('Only admin can login.');
+                    }
+
                 } else {
                     alert('Incorrect username or password.');
                 }
