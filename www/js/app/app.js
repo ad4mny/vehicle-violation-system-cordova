@@ -1,5 +1,4 @@
-// var web_links = "https://umpsamanonthego.000webhostapp.com/";
-var web_links = "http://localhost/vehicle-violation-system/";
+var web_links = "https://umpsamanonthego.000webhostapp.com/";
 var sotg_user_token = JSON.parse(localStorage.getItem('sotg_users'));
 
 var login = function () {
